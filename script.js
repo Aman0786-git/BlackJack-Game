@@ -10,7 +10,7 @@ let cardsEl = document.getElementById("cards-el")
 
 let player ={
     name : "User",
-    chips : 145 
+    chips : 20 
 }
 
 let playerEl = document.getElementById("player-el") 
@@ -30,12 +30,28 @@ function getRandomCard(){
 }
 
 function startGame(){
+    
     isAlive= true
     let firstCard =  getRandomCard();
     let secondCard = getRandomCard();
     cards= [firstCard,secondCard] ;
     sum = firstCard+ secondCard;
-    renderGame();
+    
+    if(player.chips-5>=0)
+    {
+
+        playerEl.textContent = player.name + ": $" + balanceDed(player.chips) ;
+        renderGame();
+    }
+      else 
+      {   isAlive=false;
+          playerEl.textContent =  " Not Enough Chips! Please Relaod"  ;
+          playerEl.style.color ='red';
+          playerEl.style.backgroundColor ='black ';
+          playerEl.style.display ='inline-block';
+          playerEl.style.padding ='5px';
+        }
+
 }
 
 function renderGame(){
@@ -51,6 +67,8 @@ function renderGame(){
     else if(sum === 21){
         message = "Wohoo! You've got Blackjack! 🥳";
         hasBlackJack = true ;
+        player.chips+=5;
+        playerEl.textContent = player.name + ": $" + player.chips;
     }
     else{
         message = "You're out of the game! 😓";
@@ -61,12 +79,19 @@ function renderGame(){
    
 }
 function newCard(){
-    if(isAlive!= false && hasBlackJack===false){
-
+    console.log(player.chips);
+    if(isAlive!= false && hasBlackJack===false && player.chips>=0 ){
+        console.log('new card');
         let card= getRandomCard() ;
         sum+=card;
         cards.push(card)
-        console.log(cards)
         renderGame(); 
     }
+}
+
+function balanceDed(chips){
+  
+ const leftChips = chips>=5 ? chips-5 : -1 ;
+ player.chips = leftChips;
+ return leftChips;
 }
