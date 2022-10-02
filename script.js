@@ -1,6 +1,6 @@
 let cards= [] //card array
 let sum = 0;
-let hasBlackJack = false ; 
+let hasBlackJack = false ;
 let isAlive = false ;
 let message = "" ;
 let messageEl = document.getElementById("message-el")
@@ -10,11 +10,11 @@ let cardsEl = document.getElementById("cards-el")
 
 let player ={
     name : "User",
-    chips : 20 
+    chips : 20
 }
 
-let playerEl = document.getElementById("player-el") 
-playerEl.textContent = player.name + ": $" + player.chips 
+let playerEl = document.getElementById("player-el")
+playerEl.textContent = player.name + ": $" + player.chips
 
 function getRandomCard(){
     let randomCard = Math.floor(Math.random()*13) +1 ;
@@ -30,20 +30,27 @@ function getRandomCard(){
 }
 
 function startGame(){
-    
+
     isAlive= true
     let firstCard =  getRandomCard();
     let secondCard = getRandomCard();
     cards= [firstCard,secondCard] ;
     sum = firstCard+ secondCard;
-    
+
+    let name = prompt("Please enter your name:", "User");
+    if (name == null || name == "") {
+        player.name = "User";
+    } else {
+        player.name = name;
+    }
+
     if(player.chips-5>=0)
     {
 
         playerEl.textContent = player.name + ": $" + balanceDed(player.chips) ;
         renderGame();
     }
-      else 
+      else
       {   isAlive=false;
           playerEl.textContent =  " Not Enough Chips! Please Relaod"  ;
           playerEl.style.color ='red';
@@ -72,11 +79,11 @@ function renderGame(){
     }
     else{
         message = "You're out of the game! 😓";
-        isAlive = false 
+        isAlive = false
     }
     messageEl.textContent = message ;
     sumEl.textContent = "Sum: " + sum ;
-   
+
 }
 function newCard(){
     console.log(player.chips);
@@ -85,12 +92,12 @@ function newCard(){
         let card= getRandomCard() ;
         sum+=card;
         cards.push(card)
-        renderGame(); 
+        renderGame();
     }
 }
 
 function balanceDed(chips){
-  
+
  const leftChips = chips>=5 ? chips-5 : -1 ;
  player.chips = leftChips;
  return leftChips;
