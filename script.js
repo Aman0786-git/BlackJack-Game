@@ -7,6 +7,7 @@ let messageEl = document.getElementById("message-el")
 // let sumEl = document.getElementById("sum-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.getElementById("cards-el")
+let isNewPlayer = true;
 
 let player ={
     name : "User",
@@ -32,16 +33,20 @@ function getRandomCard(){
 function startGame(){
 
     isAlive= true
+    hasBlackJack = false
     let firstCard =  getRandomCard();
     let secondCard = getRandomCard();
     cards= [firstCard,secondCard] ;
     sum = firstCard+ secondCard;
 
-    let name = prompt("Please enter your name:", "User");
-    if (name == null || name == "") {
-        player.name = "User";
-    } else {
-        player.name = name;
+    if(isNewPlayer){
+        let name = prompt("Please enter your name:", "User");
+        if (name == null || name == "") {
+            player.name = "User";
+        } else {
+            player.name = name;
+        }
+        isNewPlayer = false
     }
 
     if(player.chips-5>=0)
