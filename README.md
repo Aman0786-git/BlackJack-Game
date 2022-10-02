@@ -45,14 +45,6 @@ flowchart LR
 Star the repository by pressing the topmost-right button to start your wonderful journey.
 
 
-## Awesome contributors :star_struck:
-<a href="https://github.com/kishanrajput23/Web-Development-Projects/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=kishanrajput23/Web-Development-Projects" />
-</a>
-
-Made with [contributors-img](https://contributors-img.web.app).
-
-
 ## Help Contributing Guides :crown:
 
 We love to have `articles` and `codes` in different languages and the `betterment` of existing ones.
