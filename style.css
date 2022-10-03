@@ -3,8 +3,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
-    background: url('./bg.jpg') no-repeat center center/cover ;
+    background-color: aqua;
+    height: 100vh;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1{  
@@ -15,6 +19,9 @@ h1{
     padding: 15px;
     background-color: black  ;
     display: inline-block;
+    width: 50%;
+    align-self: center;
+    
     
 }
 h1 span{
@@ -42,7 +49,7 @@ p span{
     background-color: rgb(228, 215, 101);
 }
 #start,#newCard{
-    width: 15%;
+    width: 100%;
     margin: 10px 0px;
     padding: 5px 15px;
     font-size: 1.3rem;
@@ -59,26 +66,34 @@ p span{
     border: 2px solid white;
     background-color: rgba(33, 84, 29, 0.625);
 }
+
 .btn{
+    display: grid;
+    grid-template-columns: repeat(1,200px);
+    justify-content: center;
+}
+
+.container{
+    border: 2px solid black;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 500px;
+    border-radius:20px;
+    box-shadow:4px 4px 22px ;
+    background-color: #c85cff;
+
 }
 
-@media screen and (max-width:1140px) {
 
-    #start,#newCard{
-    width: 20%;
-    margin: 10px 0px;
-    padding: 6px 9px;
+@media screen and (max-width:550px) {
+    .container{
+        width: 95%;
+        
     }
-}
-@media screen and (max-width:780px) {
-    #start,#newCard{
-    width: 20%;
-    margin: 10px 0px;
-    padding: 6px 8px;
-    font-size: 1.1rem;
+    h1{
+        width: 70%;
     }
- 
+    #message-el{
+        font-size: 1.2rem;
+    }
 }
