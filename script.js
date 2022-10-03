@@ -29,7 +29,7 @@ function getRandomCard() {
 function startGame() {
   isAlive = true;
   hasBlackJack = false;
-  messageEl.style.backgroundColor = "rgb(228, 215, 101)";
+  messageEl.style.backgroundColor = "rgba(0, 68, 255, 0.733)";
   let firstCard = getRandomCard();
   let secondCard = getRandomCard();
   cards = [firstCard, secondCard];
@@ -41,7 +41,7 @@ function startGame() {
       player.name = "User";
     } else {
       player.name = name;
-      playerEl.style.backgroundColor = "orangered";
+      playerEl.style.backgroundColor = "lightskyblue";
     }
     isNewPlayer = false;
   }
@@ -52,8 +52,8 @@ function startGame() {
   } else {
     isAlive = false;
     playerEl.textContent = " Not Enough Chips! Please Relaod";
-    playerEl.style.color = "red";
-    playerEl.style.backgroundColor = "black ";
+    playerEl.style.color = "sky";
+    playerEl.style.backgroundColor = "blue";
   }
 }
 
@@ -68,12 +68,12 @@ function renderGame() {
   } else if (sum === 21) {
     message = "Wohoo! You've got Blackjack! 🥳";
     hasBlackJack = true;
-    messageEl.style.backgroundColor = "springgreen";
+    messageEl.style.backgroundColor = "rgba(5, 153, 186, 0.733)";
     player.chips += 5;
     playerEl.textContent = player.name + ": $" + player.chips;
   } else {
     message = "You're out of the game! 😓";
-    messageEl.style.backgroundColor = "orangered";
+    messageEl.style.backgroundColor = "lightred";
     isAlive = false;
   }
   messageEl.textContent = message;
