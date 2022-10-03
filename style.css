@@ -8,17 +8,26 @@ body{
 }
 
 h1{  
-    border-radius: 50px;
-    color: rgba(54, 52, 52, 0.986);
+    color: white;
+    border-radius: 10px;
     font-size: 2.5rem;
     margin-top: 50px;
     padding: 15px;
-    background: linear-gradient(180deg,rgb(162, 202, 124),rgba(179, 168, 168, 0.685));
+    background-color: black  ;
     display: inline-block;
+    
+}
+h1 span{
+    background-color: springgreen   ;
+    padding: 2px;
+    border: 2px solid springgreen;
+    border-radius: 10px;
+    color: black;
 }
 
-p{  margin: 20px;
-    color: white;
+p{    
+
+    margin: 30px;
     padding: 10px 0px;
     font-weight: 600;
     font-size: 1.5rem;
@@ -26,7 +35,11 @@ p{  margin: 20px;
 #message-el{
     font-style: italic;
     font-weight: 600;
-    padding: 20px 0px;
+}
+p span{
+    padding: 10px ;
+    border-radius: 20px;
+    background-color: rgb(228, 215, 101);
 }
 #start,#newCard{
     width: 15%;
@@ -34,9 +47,9 @@ p{  margin: 20px;
     padding: 5px 15px;
     font-size: 1.3rem;
     border-radius: 30px;
-    color: white;
-    background-color: goldenrod;
-    border: 2px solid black;
+    color: white ;
+    background-color: rgba(37, 36, 36, 0.733) ;
+    border: 2px solid rgb(253, 253, 253);
     cursor: pointer;
     font-weight: 600;
 }
